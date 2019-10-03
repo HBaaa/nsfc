@@ -1,0 +1,5 @@
+.vscode
+*pyc
+nsfc/project.egg-info
+nsfc/build
+nsfc/test
