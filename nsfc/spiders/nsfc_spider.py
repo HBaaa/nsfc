@@ -49,7 +49,7 @@ class NsfcSpiderSpider(scrapy.Spider):
             # 'money1': '',  # 项目金额
             # 'money2': '',
             'startTime': self.startTime,  # 批准时间
-            # 'endTime': self.endTime,
+            'endTime': self.endTime,
             # 'subcategory': '',  # 项目类别
             'currentpage': '1',
             # 'searchsubmit': 'true',

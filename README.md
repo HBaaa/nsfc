@@ -1,8 +1,8 @@
-# 科学基金查询
+# 国家自然科学基金查询
 ---
 ## 相关查询网站
-### http://www.letpub.com.cn/?page=grant
-> 速度较快，但没有摘要等详细信息
+### * http://www.letpub.com.cn/?page=grant
+> 本爬虫使用，速度较快，但没有摘要等详细信息
 
 ### http://output.nsfc.gov.cn
 > API接口较好，但资助项目检索需要验证码
@@ -21,6 +21,24 @@
 ### https://www.medsci.cn/sci/nsfc.do
 > 查询不好用
 
+
+## 使用
+```bash
+git clone https://github.com/suqingdong/nsfc.git
+cd nsfc
+
+mkdir test
+cd test
+
+# eg.: 爬取2019年C,H学科数据
+scrapy crawl nsfc_spider \
+  -a code=C,H \
+  -a startTime=2019 \
+  -a endTime=2019 \
+  -o nsfc.2019.jl \
+  -L INFO \
+  --logfile nsfc.2019.log
+```
 
 ## TODO
 - 结题项目摘要信息补充
