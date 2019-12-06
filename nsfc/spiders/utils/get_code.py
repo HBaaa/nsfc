@@ -9,8 +9,12 @@ from collections import defaultdict
 
 import requests
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
+
+PY3 = sys.version_info > 3
+
+if not PY3:
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
 
 
 class GetCode(object):
@@ -76,9 +80,8 @@ class GetCode(object):
 
 if __name__ == '__main__':
 
-    # print GetCode.get_field_code().get('C06')
     for each in list(GetCode.get_child_code('C', recursive=False)):
-        print '{code}\t{name}'.format(**each)
+        print('{code}\t{name}'.format(**each))
 
     for each in list(GetCode.get_child_code('H', recursive=False)):
-        print '{code}\t{name}'.format(**each)
+        print('{code}\t{name}'.format(**each))

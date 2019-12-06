@@ -116,7 +116,6 @@ class NsfcSpiderSpider(scrapy.Spider):
             self.crawler.engine.close_spider(self, msg)
 
         ths = response.xpath('//*[@id="main"]/table/tr[2]/th/text()').getall()
-        # print '\t'.join(ths)
 
         trs = response.xpath('//*[@id="main"]/table/tr')
         for tr in trs[2:-1]:
@@ -126,7 +125,6 @@ class NsfcSpiderSpider(scrapy.Spider):
             else:
                 key, value = tds
                 context[key] = value
-            # print json.dumps(context, indent=2, ensure_ascii=False)
             if len(context) == 11:
                 yield context
 
